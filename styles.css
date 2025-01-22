@@ -1,0 +1,635 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background: linear-gradient(135deg, #5b0570, #bf0ecf);
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #d1c4e9; /* Roxo claro */
+  }
+  
+  .btn-destaque {
+    background: #9c27b0; /* Roxo médio */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    position: relative;
+    top: 10px;
+  }
+  
+  .btn-destaque:hover {
+    background: #7b1fa2; /* Roxo mais escuro */
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+  }
+  
+  
+/* Hero Section */
+.hero {
+  background-image: url('assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--branco);
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(75, 0, 130, 0.5); /* Overlay roxo escuro */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px; /* Adiciona um espaçamento nas laterais */
+}
+
+.hero h1 {
+  font-size: 2.5rem; /* Tamanho da fonte reduzido para telas grandes */
+  margin: 0;
+  line-height: 1.2; /* Ajusta o espaçamento entre as linhas */
+ 
+}
+
+.hero p {
+  font-size: 1.2rem; /* Tamanho da fonte reduzido para telas grandes */
+  margin: 20px 0;
+  max-width: 800px; /* Limita a largura do parágrafo */
+}
+
+.hero button {
+  background: var(--roxo-medio);
+  color: var(--branco);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hero button:hover {
+  background: var(--roxo-escuro);
+}
+/* Transformando Ideias em Realidades */
+.ideias {
+  background-image: url('Imagens/tela\ pequena.webp'); /* Imagem para telas pequenas */
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Altura para telas pequenas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--branco);
+  position: relative;
+}
+
+.ideias::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.493); /* Overlay roxo escuro para melhorar a legibilidade */
+}
+
+.ideias-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px; /* Adiciona um espaçamento nas laterais */
+  top: -90px;
+  
+}
+
+.ideias h2 {
+  
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  
+  
+
+}
+
+.ideias p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+/* Imagens de fundo para diferentes tamanhos de tela */
+@media (min-width: 768px) {
+  .ideias {
+    background-image: url('Imagens/tela\ media.webp'); /* Imagem para telas médias */
+    height: 500px; /* Aumenta a altura para telas médias */
+  }
+}
+
+@media (min-width: 1024px) {
+  .ideias {
+    background-image: url('Imagens/tela\ grande.webp'); /* Imagem para telas grandes */
+    height: 1200px; /* Aumenta a altura para telas grandes */
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .ideias h2 {
+    font-size: 2rem; /* Reduz o tamanho da fonte para telas médias */
+    top: -40px;
+  }
+  .ideias p {
+    font-size: 1rem; /* Reduz o tamanho da fonte para telas médias */
+  }
+}
+
+@media (max-width: 768px) {
+  .ideias h2 {
+    font-size: 1.2rem; /* Reduz o tamanho da fonte para telas pequenas */
+    top: 50px;
+  }
+
+  .ideias p {
+    font-size: 1.0rem; /* Reduz o tamanho da fonte para telas pequenas */
+    position: relative;
+    top: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ideia h2 {
+    font-size: 1.2rem; /* Reduz o tamanho da fonte para celulares */
+  }
+}
+
+  .hero p {
+    font-size: 0.8rem; /* Reduz o tamanho da fonte para celulares */
+  }
+
+
+  /* Seção Método de Treino */
+.metodo {
+    padding: 80px 0;
+    background: #fff;
+  }
+  
+  .metodo h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #6a1b9a; /* Roxo escuro */
+  }
+  
+  .metodo-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .metodo-card {
+    background: #f4f4f4;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .metodo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .metodo-card h3 {
+    margin-bottom: 20px;
+    color: #6a1b9a; /* Roxo escuro */
+  }
+  
+  .metodo-card p {
+    color: #666;
+    line-height: 1.8;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .metodo-grid {
+      flex-direction: column;
+    }
+  
+    .metodo-card {
+      margin-bottom: 20px;
+    }
+  }
+  
+/* Sobre Mim */
+.sobre {
+  background: var(--cinza-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+}
+
+.sobre img {
+  max-width: 350px; /* Aumentei o tamanho da foto */
+  border-radius: 10px; /* Bordas arredondadas, mas não redonda */
+  margin-right: 40px;
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.sobre p {
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre img {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 100%; /* Ajusta a largura da foto em telas menores */
+  }
+}
+  
+/* Serviços */
+.servicos {
+  background: var(--branco);
+  padding: 60px 20px;
+}
+
+.servicos h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--roxo-escuro);
+}
+
+.servicos-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.servico-card {
+  background: var(--roxo-claro);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1 1 calc(33.333% - 40px);
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+  transform: translateY(-10px); /* Efeito de levantar ao passar o mouse */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+.servico-card.destaque {
+  background: var(--roxo-medio);
+  color: var(--branco);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.servico-card.destaque:hover {
+  transform: scale(1.1) translateY(-10px); /* Combina o aumento com o efeito hover */
+}
+
+.servico-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--roxo-escuro);
+}
+
+.servico-card.destaque h3 {
+  color: var(--branco);
+}
+
+.servico-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.servico-card ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.servico-card .valor {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--roxo-escuro); /* Cor do valor */
+}
+
+.servico-card.destaque .valor {
+  color: var(--branco); /* Cor do valor no card de destaque */
+}
+
+/* Botão Contratar */
+.servico-card .contratar {
+  display: inline-block;
+  background: #4CAF50; /* Verde */
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none; /* Remove sublinhado do link */
+  transition: background 0.3s ease;
+}
+
+.servico-card .contratar:hover {
+  background: #45a049; /* Verde mais escuro no hover */
+}
+
+.servico-card.destaque .contratar {
+  background: #4CAF50; /* Laranja */
+  color: var(--branco);
+}
+
+.servico-card.destaque .contratar:hover {
+  background: #E64A19; /* Laranja mais escuro no hover */
+}
+
+/* Cores personalizadas para os cards laterais */
+.servico-card:not(.destaque) {
+  background: #f0e6fa; /* Roxo bem clarinho */
+}
+
+.servico-card:not(.destaque) .valor {
+  color: var(--roxo-medio); /* Cor do valor nos cards laterais */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .servico-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .servico-card.destaque {
+    transform: scale(1);
+    order: -1;
+  }
+
+  .servico-card.destaque:hover {
+    transform: translateY(-10px); /* Ajuste do hover em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .servico-card {
+    flex: 1 1 100%;
+  }
+}
+  
+ /* Depoimentos */
+.depoimentos {
+  background: var(--cinza-claro);
+  padding: 60px 20px;
+}
+
+.depoimentos h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--roxo-escuro);
+}
+
+.depoimentos-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.depoimento-card {
+  background: var(--branco);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1 1 calc(50% - 20px); /* Dois cards lado a lado */
+  max-width: 400px; /* Largura máxima para cada card */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.depoimento-card img {
+  max-width: 100%; /* A imagem ocupa 100% da largura do card */
+  border-radius: 10px;
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .depoimento-card {
+    flex: 1 1 100%; /* Um card por linha em telas menores */
+    max-width: 100%; /* Ocupa toda a largura disponível */
+  }
+
+  .depoimento-card img {
+    max-width: 90%; /* Reduz o tamanho da imagem em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .depoimento-card img {
+    max-width: 80%; /* Reduz ainda mais o tamanho da imagem em celulares */
+  }
+}
+  
+  /* Contato */
+.contato {
+  background: var(--roxo-claro);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--roxo-escuro);
+}
+
+.contato p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Botão do WhatsApp */
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366; /* Verde do WhatsApp */
+  color: var(--branco);
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 50px; /* Bordas arredondadas */
+  transition: background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background: #128C7E; /* Verde mais escuro no hover */
+}
+
+.whatsapp-button i {
+  font-size: 1.5rem;
+}
+  
+/* Rodapé */
+footer {
+  background: linear-gradient(135deg, #5b0570, #bf0ecfe1);
+  color: #ffffff; /* Cor do texto */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E6E6FA; /* Linha divisória */
+}
+
+.logo img {
+  max-width: 150px; /* Tamanho da logo da Anyelle */
+  margin-bottom: 10px;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.politicas h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.politicas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.politicas ul li {
+  margin: 5px 0;
+}
+
+.politicas ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.politicas ul li a:hover {
+  text-decoration: underline;
+}
+
+.creditos {
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+.creditos img {
+  max-width: 200px; /* Tamanho da sua logo */
+  vertical-align: middle;
+  margin-left: -50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo, .politicas {
+    margin-bottom: 20px;
+  }
+}
